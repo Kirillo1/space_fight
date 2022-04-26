@@ -8,13 +8,13 @@ class Weapon(Equipment):
         super().__init__(name, taken_capacity)
         self.min_damage = min_damage
         self.critical_hit_chance = critical_hit_chance
-        self.max_damage = self.min_damage + self.min_damage // HUNDRED * PERCENT_MAXIMUM_DAMAGE
+        self.max_damage = self.min_damage + int(self.min_damage / HUNDRED * PERCENT_MAXIMUM_DAMAGE)
 
     def action(self):
         if randint(1, HUNDRED) <= CRITICAL_DAMAGE_PERCENT:
             return 0
         if randint(1, HUNDRED) <= self.critical_hit_chance:
-            damage = self.max_damage + self.max_damage // HUNDRED * PERCENT_MAXIMUM_DAMAGE
+            damage = self.max_damage + int(self.max_damage / HUNDRED * PERCENT_MAXIMUM_DAMAGE)
         else:
             damage = randint(self.min_damage, self.max_damage)
         damage = self.recalculate_of_power(damage)
