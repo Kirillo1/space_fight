@@ -1,4 +1,4 @@
-from constants import MAX_WEAR_CONDITION, WEAR_STEP
+from constants import MAX_WEAR_CONDITION, WEAR_STEP, HUNDRED
 from exceptions import EquipmentWornOutError
 
 
@@ -19,7 +19,7 @@ class Equipment:
             raise EquipmentWornOutError(self.name)
 
     def recalculate_of_power(self, value):
-        return value - value * self.wear_condition / 100
+        return value - value * self.wear_condition / HUNDRED
 
     def display(self):
-        return f"{'Название оборудования':<40}{self.name}\n{'Уровень износа':<40}{self.wear_condition}\n{'Объём':>40}{self.taken_capacity}"
+        return f"{'Название оборудования':<40}{self.name}\n{'Уровень износа':<40}{self.wear_condition}\n{'Объём':<40}{self.taken_capacity}"

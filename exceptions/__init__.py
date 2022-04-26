@@ -1,1 +1,1 @@
-from equipment_worn_out_error import EquipmentWornOutError
+from .equipment_worn_out_error import EquipmentWornOutError
