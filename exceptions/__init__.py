@@ -1,1 +1,3 @@
 from .equipment_worn_out_error import EquipmentWornOutError
+from .total_volume_error import TotalVolumeError
+from .free_slot_error import FreeSlotError
